@@ -44,13 +44,6 @@ Each feature is a **self-contained module** with:
 - **Utils**: Feature-specific helpers
 - **Tests**: Pytest test cases
 
-This forces candidates to demonstrate:
-
-- ✅ Layered thinking
-- ✅ Separation of concerns
-- ✅ Maintainable structure
-- ✅ Clear abstractions
-
 ## Features
 
 ### 1. **Auth Feature**
@@ -95,10 +88,6 @@ This forces candidates to demonstrate:
 - `DELETE /clinics/<id>` - Delete clinic (admin only)
 
 ## Getting Started
-
-**⚡ For quick setup and testing, see [`SETUP.md`](./SETUP.md)**
-
-For detailed development information, see [`QUICKSTART.md`](./QUICKSTART.md)
 
 ### Prerequisites
 
@@ -451,27 +440,6 @@ def test_create_yourfeature(client, admin_token):
 
 Follow the OpenAI-style format from existing features.
 
----
-
-### Complete Workflow Checklist
-
-```bash
-✅ Create feature directory structure
-✅ Create model.py with SQLAlchemy models
-✅ Register model in app/db.py
-✅ Create schemas.py with Pydantic schemas
-✅ Create resource.py with response mapping
-✅ Create service.py with business logic
-✅ Create routes.py with API endpoints
-✅ Register blueprint in app/main.py
-✅ Generate migration: alembic revision --autogenerate -m "..."
-✅ Apply migration: alembic upgrade head
-✅ Create tests in tests/test_yourfeature.py
-✅ Create API documentation in README.md
-✅ Run tests: pytest app/features/yourfeature/tests/
-✅ Test manually with Postman or curl
-```
-
 ## API Examples
 
 ### 1. Sign Up
@@ -549,58 +517,5 @@ Custom exceptions with consistent error responses.
 from app.features.my_feature.routes import my_feature_bp
 app.register_blueprint(my_feature_bp)
 ```
-
-## Best Practices Demonstrated
-
-✅ **Clean Code**: Clear, readable, well-organized code
-✅ **Separation of Concerns**: Each component has a single responsibility
-✅ **DRY Principle**: Shared utilities avoid duplication
-✅ **Error Handling**: Custom exceptions with meaningful messages
-✅ **Testing**: Comprehensive test coverage
-✅ **Documentation**: Feature-level and code-level documentation
-✅ **Security**: Password hashing, JWT tokens, role-based access
-✅ **Scalability**: Modular structure allows easy feature additions
-
-## Configuration
-
-Environment variables:
-
-- `ENVIRONMENT`: development | production | testing
-- `DATABASE_URL`: Database connection string
-- `JWT_SECRET`: Secret key for JWT signing
-- `DEBUG`: Enable/disable debug mode
-- `SQL_ECHO`: Log SQL queries
-
-## Common Interview Questions This Template Addresses
-
-1. **How do you structure a backend application?**
-   - Feature-based, layered architecture
-
-2. **How do you handle authorization?**
-   - Custom decorators, role-based access control
-
-3. **How do you validate user input?**
-   - Pydantic schemas in resource layer
-
-4. **How do you handle errors?**
-   - Custom exceptions with consistent responses
-
-5. **How do you write testable code?**
-   - Dependency injection, service layer abstraction
-
-6. **How do you organize business logic?**
-   - Service layer handles all logic
-
-7. **How do you reuse code?**
-   - Shared utilities module
-
-8. **How do you document code?**
-   - README per feature, clear function signatures
-
-## License
-
-MIT License - Feel free to use and modify as needed.
-
-## Questions?
 
 Refer to individual feature READMEs for detailed documentation on each endpoint.
