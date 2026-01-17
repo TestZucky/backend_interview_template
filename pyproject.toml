@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "backend-interview-boilerplate"
+version = "1.0.0"
+description = "Backend interview boilerplate with layered architecture"
+authors = ["Interview Team <team@example.com>"]
+readme = "README.md"
+license = "MIT"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Flask = "^2.3.0"
+Flask-CORS = "^4.0.0"
+SQLAlchemy = "^2.0.0"
+pydantic = {version = "^2.0.0", extras = ["email"]}
+PyJWT = "^2.8.0"
+passlib = "^1.7.4"
+bcrypt = "^4.0.0"
+python-dotenv = "^1.0.0"
+alembic = "^1.13.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+black = "^23.0.0"
+flake8 = "^6.0.0"
+mypy = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311"]
+
+[tool.pytest.ini_options]
+testpaths = ["app"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.coverage.run]
+source = ["app"]
+omit = ["*/tests/*", "*/test_*.py"]
